@@ -14,15 +14,16 @@ public static class GameEngine
 
     private static List<GameObject> gameObjects = new List<GameObject>();
 
-    //TODO implement a listener interface
-
-
     public static Map GetMap() {
         return map;
     }
 
     public static GameObject GetFocusedObject(){
         return _focusedObject;
+    }
+
+    public static List<GameObject> GetGameObjects(){
+        return gameObjects;
     }
 
     public static void Setup(){
@@ -45,12 +46,12 @@ public static class GameEngine
                     newObj = gameObject.ToObject<King>();
                     break;
             }
-                        
             AddGameObject(newObj);
         }
     }
 
     public static void Render() {
+
         //Clean the map
         Console.Clear();
 
